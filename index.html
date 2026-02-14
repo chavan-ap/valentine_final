@@ -743,7 +743,7 @@
                     loading="lazy"
                     style="border-radius: 12px;"
                 ></iframe>
-                <!-- Can't Help Falling in Love - Elvis Presley -->
+                <!-- Sar Sukhachi Shravani - Abhijeet Sawant, Bela Shende -->
             </div>
         </div>
     </section>
@@ -784,7 +784,7 @@
             <div class="spotify-wrapper" style="margin-top: 40px;">
                 <p class="spotify-label">♫ Playing Our Song</p>
                 <iframe
-                    src="https://open.spotify.com/embed/track/44AyOl4qVkzS48vBsbNXaC?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/0tgVpDi06FyKpA1z0VMD4v?utm_source=generator&theme=0"
                     width="100%"
                     height="152"
                     frameborder="0"
@@ -1063,13 +1063,21 @@
 
 
     yesBtn.addEventListener('click', () => {
-        // Hide finale scene
+        // Hide all other scenes
+        document.getElementById('scene-open').classList.add('hidden');
+        document.getElementById('scene-map').classList.add('hidden');
+        document.getElementById('scene-letter').classList.add('hidden');
+        document.getElementById('scene-photo').classList.add('hidden');
         document.getElementById('scene-finale').classList.add('hidden');
 
-        // Show celebration
+        // Also hide dividers
+        document.querySelectorAll('.divider').forEach(d => d.classList.add('hidden'));
+
+        // Show celebration at top
         const cel = document.getElementById('scene-celebration');
         cel.classList.add('active');
 
+        // Scroll to very top so celebration fills the screen
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // Start fireworks & petals
